@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maple & Steam menu — coffee, tea, house bakery, and all-day brunch. Filter, search, and build a demo order.">
+  <title>Menu | Maple & Steam</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="shell nav-wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">M&amp;S</span>
+        <span class="logo-copy">Maple &amp; Steam<small>COFFEE HOUSE</small></span>
+      </a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservation.html">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-pill" id="cart-open" type="button">Cart <span id="cart-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell page-hero">
+      <p class="eyebrow">MENU</p>
+      <h1 class="display">Coffee, tea,<br><em>and something good.</em></h1>
+      <p class="lede">A small seasonal list. Everything is made in-house, and the filter is here to help you find your next order.</p>
+    </section>
+
+    <section class="shell section">
+      <div class="filter-bar">
+        <div class="filter-buttons" role="group" aria-label="Filter menu by category">
+          <button class="filter-btn active" type="button" data-filter="All">All</button>
+          <button class="filter-btn" type="button" data-filter="Coffee">Coffee</button>
+          <button class="filter-btn" type="button" data-filter="Tea">Tea</button>
+          <button class="filter-btn" type="button" data-filter="Bakery">Bakery</button>
+          <button class="filter-btn" type="button" data-filter="Brunch">Brunch</button>
+        </div>
+        <input class="search-input" id="menu-search" type="search" placeholder="Search the menu…" aria-label="Search the menu">
+      </div>
+      <div class="menu-grid" id="menu-grid">
+        <p class="empty-state">Loading the menu…</p>
+      </div>
+      <p class="form-note" style="margin-top:22px">Demo ordering: the cart and checkout are stored in this browser only. No payment is processed and no order is sent to a kitchen.</p>
+    </section>
+
+    <section class="shell section">
+      <div class="cta-band">
+        <h2>Prefer<br>a table?</h2>
+        <a class="btn" href="reservation.html">Reserve a seat <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <b>Maple &amp; Steam</b>
+          <p>A neighbourhood coffee house in Kurnool. Small menu, house bakery, and a room made for staying.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="reservation.html">Reservations</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-credit">Designed &amp; built by <b>R Sai Dheeraj</b> · Roll no. <b>24ATA05269</b> · © <span id="year">2026</span> Maple &amp; Steam</div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Your order">
+    <div class="cart-head">
+      <h2>Your order</h2>
+      <button class="cart-close" id="cart-close" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"><p class="cart-empty">Your cart is empty. Add something from the menu.</p></div>
+    <div class="cart-summary">
+      <div><span>Subtotal</span><b id="cart-subtotal">₹0</b></div>
+      <div><span>Tax (5%)</span><b id="cart-tax">₹0</b></div>
+      <div class="total"><span>Total</span><b id="cart-total">₹0</b></div>
+    </div>
+    <form class="checkout-form" id="checkout-form" novalidate>
+      <div class="field"><label for="checkout-name">Name</label><input id="checkout-name" type="text" maxlength="80" placeholder="Your name" required></div>
+      <div class="field"><label for="checkout-email">Email</label><input id="checkout-email" type="email" maxlength="120" placeholder="you@example.com" required></div>
+      <div class="field"><label for="checkout-phone">Phone</label><input id="checkout-phone" type="tel" maxlength="18" placeholder="10-digit number" required></div>
+      <div class="field"><label for="checkout-type">Order type</label><select id="checkout-type" required><option value="">Select</option><option>Dine in</option><option>Takeaway</option></select></div>
+      <button class="btn" type="submit">Place order <span aria-hidden="true">→</span></button>
+      <p class="form-message" id="checkout-message" role="status" aria-live="polite"></p>
+    </form>
+    <button class="text-button" id="cart-clear" type="button">Clear cart</button>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

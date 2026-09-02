@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserve a table at Maple & Steam. Choose a date, time, and party size. A demo reservation flow by R Sai Dheeraj.">
+  <title>Reservations | Maple & Steam</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="shell nav-wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">M&amp;S</span>
+        <span class="logo-copy">Maple &amp; Steam<small>COFFEE HOUSE</small></span>
+      </a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservation.html" class="active">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-pill" id="cart-open" type="button">Cart <span id="cart-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell page-hero">
+      <p class="eyebrow">RESERVATIONS</p>
+      <h1 class="display">Save a seat.<br><em>Stay a while.</em></h1>
+      <p class="lede">Tell us when you are coming and how many chairs to keep. The demo saves your request in this browser and shows a confirmation.</p>
+    </section>
+
+    <section class="shell section">
+      <div class="form-layout">
+        <div>
+          <p class="eyebrow">GOOD TO KNOW</p>
+          <h2 style="margin:0;font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1.05">Tables for<br>one to eight.</h2>
+          <p class="lede" style="margin-top:18px">We hold reservations for 15 minutes. For groups larger than eight, send a message and we will arrange the long table.</p>
+          <div class="info-list">
+            <div class="info-item"><b>HOURS</b><span>Monday–Friday: 7:30 AM – 10:00 PM<br>Saturday–Sunday: 8:00 AM – 10:30 PM</span></div>
+            <div class="info-item"><b>SEATING</b><span>Window seats, long table, and a quiet back corner.</span></div>
+            <div class="info-item"><b>DEMO NOTE</b><span>This is a front-end project. No table is actually held and no message is sent.</span></div>
+          </div>
+        </div>
+
+        <form class="form-panel" id="reservation-form" novalidate>
+          <div class="field">
+            <label for="res-name">Full name</label>
+            <input id="res-name" type="text" autocomplete="name" maxlength="80" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="res-email">Email</label>
+            <input id="res-email" type="email" autocomplete="email" maxlength="120" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="res-phone">Phone</label>
+            <input id="res-phone" type="tel" autocomplete="tel" maxlength="18" placeholder="10-digit number" required>
+          </div>
+          <div class="field">
+            <label for="res-guests">Guests</label>
+            <select id="res-guests" required>
+              <option value="">Select</option>
+              <option value="1">1 guest</option>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+              <option value="6">6 guests</option>
+              <option value="7">7 guests</option>
+              <option value="8">8 guests</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="res-date">Date</label>
+            <input id="res-date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="res-time">Time</label>
+            <select id="res-time" required>
+              <option value="">Select</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>19:00</option>
+              <option>20:00</option>
+              <option>21:00</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="res-notes">Anything we should know?</label>
+            <textarea id="res-notes" rows="4" maxlength="400" placeholder="Birthday, high chair, quiet corner..." required></textarea>
+          </div>
+          <button class="btn" type="submit">Request a table <span aria-hidden="true">→</span></button>
+          <p class="form-message" id="reservation-message" role="status" aria-live="polite"></p>
+          <p class="form-note">Demo form: saved in this browser's localStorage. No reservation is sent to the café.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="cta-band">
+        <h2>Hungry<br>already?</h2>
+        <a class="btn" href="menu.html">Browse the menu <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <b>Maple &amp; Steam</b>
+          <p>A neighbourhood coffee house in Kurnool. Small menu, house bakery, and a room made for staying.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="reservation.html">Reservations</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-credit">Designed &amp; built by <b>R Sai Dheeraj</b> · Roll no. <b>24ATA05269</b> · © <span id="year">2026</span> Maple &amp; Steam</div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Your order">
+    <div class="cart-head">
+      <h2>Your order</h2>
+      <button class="cart-close" id="cart-close" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"><p class="cart-empty">Your cart is empty. Add something from the menu.</p></div>
+    <div class="cart-summary">
+      <div><span>Subtotal</span><b id="cart-subtotal">₹0</b></div>
+      <div><span>Tax (5%)</span><b id="cart-tax">₹0</b></div>
+      <div class="total"><span>Total</span><b id="cart-total">₹0</b></div>
+    </div>
+    <form class="checkout-form" id="checkout-form" novalidate>
+      <div class="field"><label for="checkout-name">Name</label><input id="checkout-name" type="text" maxlength="80" placeholder="Your name" required></div>
+      <div class="field"><label for="checkout-email">Email</label><input id="checkout-email" type="email" maxlength="120" placeholder="you@example.com" required></div>
+      <div class="field"><label for="checkout-phone">Phone</label><input id="checkout-phone" type="tel" maxlength="18" placeholder="10-digit number" required></div>
+      <div class="field"><label for="checkout-type">Order type</label><select id="checkout-type" required><option value="">Select</option><option>Dine in</option><option>Takeaway</option></select></div>
+      <button class="btn" type="submit">Place order <span aria-hidden="true">→</span></button>
+      <p class="form-message" id="checkout-message" role="status" aria-live="polite"></p>
+    </form>
+    <button class="text-button" id="cart-clear" type="button">Clear cart</button>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
